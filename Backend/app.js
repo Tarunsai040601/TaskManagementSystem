@@ -3,7 +3,7 @@ const app = express();
 const dotenv = require("dotenv").config({ quiet: true });
 const dataBase = require("./Configurations/Config");
 const authRouter = require("./Routers/authRouter/authRouter");
-const port = process.env.PORT || 8045;
+const port = process.env.PORT || 8015;
 
 // built-in middleware
 app.use(express.json());
