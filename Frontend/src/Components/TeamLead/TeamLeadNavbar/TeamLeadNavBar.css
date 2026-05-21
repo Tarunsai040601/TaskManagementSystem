@@ -1,0 +1,238 @@
+/* TeamLeadNavbar.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #20c8b7;
+  flex-shrink: 0;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sidebar-container {
+  width: 280px;
+  min-height: 100vh;
+  background: #111827;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* LOGO */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.logo-box {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #111827;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.sidebar-logo h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.sidebar-logo p {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 4px 0 0 0;
+  font-weight: 500;
+}
+
+/* LINKS */
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+.nav-link {
+  width: 100%;
+  padding: 15px 18px;
+  background: transparent;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: #1f2937;
+  color: white;
+  transform: translateX(5px);
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+/* USER */
+
+.sidebar-user {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  padding: 16px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #374151;
+}
+
+.user-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-user h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  word-break: break-word;
+}
+
+.sidebar-user p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fbbf24;
+  margin: 0;
+  word-break: break-word;
+}
+
+.sidebar-user span {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* LOGOUT */
+
+.logout-btn {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+}
+
+
+/* TABLET */
+
+@media (max-width: 992px) {
+  .sidebar-container {
+    width: 240px;
+  }
+
+  .sidebar-logo span {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sidebar-links {
+    margin-top: 20px;
+  }
+
+  .sidebar-user {
+    margin-top: 25px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .sidebar-logo {
+    justify-content: center;
+  }
+
+  .sidebar-logo span {
+    font-size: 18px;
+  }
+
+  .nav-link {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .logout-btn {
+    height: 48px;
+    font-size: 14px;
+  }
+}

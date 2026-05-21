@@ -1,0 +1,324 @@
+/* =========================
+   MAIN CONTAINER
+========================= */
+.employee-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: #f4f6f9;
+  box-sizing: border-box;
+  margin-left: 260px;
+}
+
+/* =========================
+   TITLE
+========================= */
+.employee-title {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 1.75rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* =========================
+   GRID (FIX RESPONSIVE)
+========================= */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* =========================
+   CARD
+========================= */
+.employee-card {
+  background: #ffffff;
+  padding: 25px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  border: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   AVATAR FIX (IMPORTANT)
+========================= */
+.avatar-wrapper img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f0f0;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   TEXT
+========================= */
+.employee-card h3 {
+  margin: 6px 0 4px;
+  font-size: 1.1rem;
+  color: #222;
+  text-transform: capitalize;
+}
+
+.employee-email {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.role-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: #e6f0ff;
+  color: #2b6cb0;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   ASSIGN BUTTON (RESTORED)
+========================= */
+.employee-card button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.employee-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   SEARCH
+========================= */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* =========================
+   MODAL FIX
+========================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 380px;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+}
+
+.modal-content button {
+  margin: 5px;
+  padding: 8px 12px;
+}
+
+/* =========================
+   MOBILE FIX (IMPORTANT)
+========================= */
+@media (max-width: 768px) {
+  .employee-container {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .employee-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box input {
+    width: 90%;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+/* updated */
+/* MAIN */
+.employee-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: #f4f6f9;
+  margin-left: 260px;
+}
+
+/* TITLE */
+.employee-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* SEARCH */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 280px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* GRID */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.employee-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔥 CUTE COIN AVATAR */
+.avatar-wrapper img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.avatar-wrapper img:hover {
+  transform: scale(1.15);
+}
+
+/* TEXT */
+.employee-email {
+  font-size: 13px;
+  color: gray;
+}
+
+.role-badge {
+  background: #e6f0ff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+/* BUTTON */
+.employee-card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.employee-card button:hover {
+  transform: scale(1.05);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .employee-container {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .employee-grid {
+    grid-template-columns: 1fr;
+  }
+}

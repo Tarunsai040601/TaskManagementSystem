@@ -1,0 +1,155 @@
+.create-employee-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ FIX: wrapper properly used */
+.create-employee-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* smooth entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-employee-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.create-employee-header h1 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.create-employee-header p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* FORM */
+.create-employee-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* INPUTS (IMPORTANT FIX FOR YOUR JSX) */
+.create-employee-form input,
+.create-employee-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+  outline: none;
+}
+
+.create-employee-form input:focus,
+.create-employee-form select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* BUTTON */
+.create-employee-form button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-employee-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+}
+
+.create-employee-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ALERTS (KEEP SAME STYLE BUT CLEAN) */
+.alert {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-error {
+  background: #ffe5e5;
+  color: #d60000;
+  border: 1px solid #ffb3b3;
+}
+
+.alert-success {
+  background: #e6ffed;
+  color: #1a7f37;
+  border: 1px solid #b7f5c5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .create-employee-wrapper {
+    padding: 30px 20px;
+  }
+
+  .create-employee-header h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-employee-wrapper {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .create-employee-header h1 {
+    font-size: 20px;
+  }
+
+  .create-employee-form {
+    gap: 15px;
+  }
+}
