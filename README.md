@@ -56,7 +56,9 @@ npm install
 # Create .env File
 
 PORT=8015
+
 MONGODB_URL=your_mongodb_connection
+
 JWT_SECRET=your_secret_key
 
 
@@ -92,27 +94,36 @@ The Employee Task Management System follows a full-stack MERN architecture.
 Built using:
 
 React.js
+
 CSS
+
 Axios
+
 React Router DOM
+
 Responsibilities
+
 User authentication
+
 Dashboard UI
+
 Task management UI
+
 Status updates
+
 Responsive design
 
 # Backend
 
 Built using:
 
-Node.js
-Express.js
-Responsibilities
-REST API creation
-Authentication handling
-Authorization
-Task CRUD operations
+Node.js || 
+Express.js ||
+Responsibilities ||
+REST API creation ||
+Authentication handling ||
+Authorization ||
+Task CRUD operations (CREATE , READ , UPDATE , DELETE ) ||
 Database communication
 
 # Database
