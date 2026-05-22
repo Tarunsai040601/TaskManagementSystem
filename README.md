@@ -41,7 +41,7 @@ The system improves communication between team members, enhances productivity, a
 • Responsive and user-friendly interface
 
 
-# Project Setup Instructions
+# 1.Project Setup Instructions
 
 git clone <repository-url>
 
@@ -64,6 +64,10 @@ JWT_SECRET=your_secret_key
 
 npm start or npm run dev
 
+# Backend runs on
+
+http://localhost:8015
+
 
 # Frontend Setup
 
@@ -75,9 +79,106 @@ cd Frontend
 
 npm install
 
-
 # Start Frontend
 
 npm run dev
 
+# 2. Architecture Overview
+
+The Employee Task Management System follows a full-stack MERN architecture.
+
+# Frontend
+
+Built using:
+
+React.js
+CSS
+Axios
+React Router DOM
+Responsibilities
+User authentication
+Dashboard UI
+Task management UI
+Status updates
+Responsive design
+
+# Backend
+
+Built using:
+
+Node.js
+Express.js
+Responsibilities
+REST API creation
+Authentication handling
+Authorization
+Task CRUD operations
+Database communication
+
+# Database
+
+Built using:
+
+MongoDB
+
+Mongoose ODM
+
+Responsibilities
+
+Store users
+
+Store tasks
+
+Maintain task relationships
+
+# Authentication
+
+Uses:
+
+JWT Authentication
+
+Role-based Authorization
+
+Roles
+
+Team Lead
+
+Employee
+
+
+# 3. Database Design Explanation
+
+User Schema 
+
+Task Schema
+
+# Relationships
+
+One Team Lead
+
+can create multiple tasks.
+
+One Employee
+
+can have multiple assigned tasks.
+
+MongoDB populate() is used to fetch related user details.
+
+
+# 4. Assumptions Made
+
+Only Team Leads can create employees.
+
+Only Team Leads can assign tasks.
+
+Employees can update only their own tasks.
+
+JWT token is required for all protected routes.
+
+Task statuses are restricted to:
+
+Pending
+inProgress
+Completed
+Email addresses are unique.
 
