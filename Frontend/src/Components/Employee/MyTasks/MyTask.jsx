@@ -11,8 +11,10 @@ const MyTask = () => {
 
   if (token) {
     try {
+
       const decoded = jwtDecode(token);
       employeeId = decoded.id || decoded._id;
+
     } catch (err) {
       console.log(err);
     }
@@ -20,9 +22,10 @@ const MyTask = () => {
 
   const [tasks, setTasks] = useState([]);
 
-  // =========================
+  // =====================================
   // FETCH TASKS
-  // =========================
+  // =====================================
+
   useEffect(() => {
 
     const fetchTasks = async () => {
@@ -38,10 +41,14 @@ const MyTask = () => {
           }
         );
 
+        console.log("EMPLOYEE TASKS:", res.data);
+
         setTasks(res.data.tasks || []);
 
       } catch (err) {
+
         console.log("Error:", err);
+
       }
 
     };
@@ -50,14 +57,15 @@ const MyTask = () => {
 
   }, [token]);
 
-  // =========================
+  // =====================================
   // UPDATE STATUS
-  // =========================
+  // =====================================
+
   const updateStatus = async (taskId, status) => {
 
     try {
 
-      await axios.put(
+      const res = await axios.patch(
         `http://localhost:8015/api/employee/update/${taskId}`,
         { status },
         {
@@ -67,6 +75,9 @@ const MyTask = () => {
         }
       );
 
+      console.log("UPDATED:", res.data);
+
+      // FRONTEND UPDATE
       const updatedTasks = tasks.map((task) =>
         task._id === taskId
           ? { ...task, status }
@@ -76,7 +87,9 @@ const MyTask = () => {
       setTasks(updatedTasks);
 
     } catch (err) {
+
       console.log("Update Error:", err);
+
     }
 
   };
@@ -110,28 +123,36 @@ const MyTask = () => {
               key={task._id}
             >
 
+              {/* TOP */}
+
               <div className="mytask-card-top">
 
                 <h3>
                   {task.taskTitle}
                 </h3>
 
-                <span className={`mytask-status ${task.status}`}>
+                <span
+                  className={`mytask-status ${task.status}`}
+                >
                   {task.status}
                 </span>
 
               </div>
 
+              {/* DESCRIPTION */}
+
               <p className="mytask-description">
                 {task.description}
               </p>
+
+              {/* BUTTONS */}
 
               <div className="mytask-btn-group">
 
                 <button
                   className="pending-btn"
                   onClick={() =>
-                    updateStatus(task._id, "pending")
+                    updateStatus(task._id, "Pending")
                   }
                 >
                   Pending
@@ -140,7 +161,7 @@ const MyTask = () => {
                 <button
                   className="progress-btn"
                   onClick={() =>
-                    updateStatus(task._id, "inprogress")
+                    updateStatus(task._id, "inProgress")
                   }
                 >
                   In Progress
@@ -149,7 +170,7 @@ const MyTask = () => {
                 <button
                   className="complete-btn"
                   onClick={() =>
-                    updateStatus(task._id, "complete")
+                    updateStatus(task._id, "Completed")
                   }
                 >
                   Complete

@@ -3,6 +3,7 @@
 /* =========================
    PAGE
 ========================= */
+
 .mytask-page {
   width: 100%;
   min-height: 100vh;
@@ -15,6 +16,7 @@
 /* =========================
    HEADER
 ========================= */
+
 .mytask-header {
   margin-bottom: 28px;
 }
@@ -45,6 +47,7 @@
 /* =========================
    GRID
 ========================= */
+
 .mytask-grid {
   display: grid;
   grid-template-columns:
@@ -55,6 +58,7 @@
 /* =========================
    CARD
 ========================= */
+
 .mytask-card {
   background: white;
   border-radius: 22px;
@@ -72,6 +76,7 @@
 /* =========================
    CARD TOP
 ========================= */
+
 .mytask-card-top {
   display: flex;
   justify-content: space-between;
@@ -90,6 +95,7 @@
 /* =========================
    DESCRIPTION
 ========================= */
+
 .mytask-description {
   font-size: 15px;
   line-height: 1.7;
@@ -100,6 +106,7 @@
 /* =========================
    STATUS
 ========================= */
+
 .mytask-status {
   padding: 6px 14px;
   border-radius: 30px;
@@ -110,21 +117,28 @@
   white-space: nowrap;
 }
 
-.mytask-status.pending {
+/* Pending */
+
+.mytask-status.Pending {
   background: #f59e0b;
 }
 
-.mytask-status.inprogress {
+/* In Progress */
+
+.mytask-status.inProgress {
   background: #3b82f6;
 }
 
-.mytask-status.complete {
+/* Completed */
+
+.mytask-status.Completed {
   background: #10b981;
 }
 
 /* =========================
    BUTTON GROUP
 ========================= */
+
 .mytask-btn-group {
   display: flex;
   gap: 10px;
@@ -134,6 +148,7 @@
 /* =========================
    BUTTONS
 ========================= */
+
 .mytask-btn-group button {
   flex: 1;
   min-width: 100px;
@@ -148,6 +163,7 @@
 }
 
 /* Pending */
+
 .pending-btn {
   background: #f59e0b;
 }
@@ -157,6 +173,7 @@
 }
 
 /* In Progress */
+
 .progress-btn {
   background: #3b82f6;
 }
@@ -165,7 +182,8 @@
   background: #2563eb;
 }
 
-/* Complete */
+/* Completed */
+
 .complete-btn {
   background: #10b981;
 }
@@ -177,6 +195,7 @@
 /* =========================
    EMPTY
 ========================= */
+
 .mytask-empty {
   font-size: 18px;
   color: #6b7280;
@@ -186,6 +205,7 @@
 /* =========================
    LAPTOP
 ========================= */
+
 @media (max-width: 1100px) {
 
   .mytask-page {
@@ -202,6 +222,7 @@
 /* =========================
    TABLET
 ========================= */
+
 @media (max-width: 768px) {
 
   .mytask-page {
@@ -238,6 +259,7 @@
 /* =========================
    MOBILE
 ========================= */
+
 @media (max-width: 480px) {
 
   .mytask-page {
