@@ -4,7 +4,7 @@ const roleMiddleware = (roles) => {
       if (!roles.includes(req.user.role)) {
         return res.status(403).json({
           message: "Unauthorized access",
-          error_message:error.message
+          // error_message:error.message
         });
       }
 

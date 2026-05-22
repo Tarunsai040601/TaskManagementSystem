@@ -1,113 +1,184 @@
-/* MAIN WRAPPER FIX */
-.task-page {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================
+   MAIN PAGE WRAPPER
+========================= */
+
+.vt-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f6fb;
   padding: 20px;
-  width: calc(100% - 260px); /* sidebar width consider */
-  margin-left: 260px; /* sidebar space */
-  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+
+  /* ✅ IMPORTANT: adjust sidebar space */
+  margin-left: 250px;
+  width: calc(100% - 250px);
 }
 
-/* TABLE TITLE */
-.task-title {
-  font-size: 24px;
+/* =========================
+   CONTAINER
+========================= */
+
+.vt-container {
+  width: 100%;
+  padding: 10px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.vt-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e293b;
   margin-bottom: 20px;
-  color: #333;
+}
+
+/* =========================
+   TABLE WRAPPER
+========================= */
+
+.vt-table-wrapper {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TABLE DESIGN
+========================= */
+
+.vt-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.vt-table th {
+  background: #1e293b;
+  color: #fff;
+  padding: 14px;
+  font-size: 14px;
+  text-align: left;
   font-weight: 600;
 }
 
-/* TABLE WRAPPER */
-.table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-}
-
-/* TABLE */
-.task-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 700px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-/* HEADER */
-.task-table thead {
-  background: #20c8b7;
-  color: white;
-}
-
-.task-table th,
-.task-table td {
-  padding: 12px 15px;
-  text-align: left;
+.vt-table td {
+  padding: 14px;
   font-size: 14px;
+  border-bottom: 1px solid #eee;
+  color: #333;
 }
 
-/* ROW HOVER */
-.task-table tbody tr:hover {
-  background: #f5f5f5;
+/* hover effect */
+.vt-table tr:hover {
+  background: #f1f5f9;
+  transition: 0.2s;
 }
-
-/* PRIORITY */
-.priority {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-}
-
-.priority.low { background: #28a745; }
-.priority.medium { background: #ffc107; color: black; }
-.priority.high { background: #dc3545; }
-
-/* STATUS */
-.status {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-}
-
-.status.pending { background: #ff9800; }
-.status.inprogress { background: #2196f3; }
-.status.completed { background: #4caf50; }
 
 /* =========================
-   RESPONSIVE FIX
+   PRIORITY BADGES
 ========================= */
 
-/* LAPTOP SMALL */
+.priority {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.priority.Low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.priority.Medium {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.priority.High {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =========================
+   NO DATA
+========================= */
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+}
+
+/* =========================
+   SCROLL FIX (MOBILE)
+========================= */
+
+.vt-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.vt-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .task-page {
-    width: calc(100% - 220px);
+  .vt-page {
     margin-left: 220px;
+    width: calc(100% - 220px);
   }
 }
 
-/* TABLET */
+/* Mobile */
 @media (max-width: 768px) {
-  .task-page {
-    width: 100%;
+  .vt-page {
     margin-left: 0;
+    width: 100%;
+    padding: 10px;
   }
 
-  .task-table th,
-  .task-table td {
+  .vt-title {
+    font-size: 20px;
+  }
+
+  .vt-table {
+    min-width: 600px;
+  }
+
+  .vt-table th,
+  .vt-table td {
     font-size: 12px;
     padding: 10px;
   }
 }
 
-/* MOBILE */
+/* Small Mobile */
 @media (max-width: 480px) {
-  .task-title {
-    font-size: 18px;
+  .vt-page {
+    padding: 8px;
   }
 
-  .task-table {
-    min-width: 600px;
+  .vt-table {
+    min-width: 520px;
+  }
+
+  .priority {
+    font-size: 10px;
+    padding: 4px 8px;
   }
 }

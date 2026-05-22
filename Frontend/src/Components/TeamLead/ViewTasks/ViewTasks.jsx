@@ -3,19 +3,15 @@ import axios from "axios";
 import "./ViewTasks.css";
 
 const ViewTasks = () => {
-
   const [tasks, setTasks] = useState([]);
 
   const token = localStorage.getItem("teamLeadToken");
 
-  // ======================================================
+  // ===============================
   // FETCH TASKS
-  // ======================================================
-
+  // ===============================
   const fetchTasks = async () => {
-
     try {
-
       const res = await axios.get(
         "http://localhost:8015/api/tasks/fetchTask",
         {
@@ -25,13 +21,14 @@ const ViewTasks = () => {
         }
       );
 
-      setTasks(res.data.tasks || []);
+    console.log("TASK API RESPONSE:", res.data); 
 
+      
+       
+    setTasks(res.data.tasks || []);
     } catch (err) {
-      console.log(err.message);
-      setTasks([]);
+      console.log("Error fetching tasks:", err.message);
     }
-
   };
 
   useEffect(() => {
@@ -39,67 +36,46 @@ const ViewTasks = () => {
   }, []);
 
   return (
-    <div className="task-page">
+    <div className="vt-page">
+      <div className="vt-container">
+        <h2 className="vt-title">Assigned Tasks</h2>
 
-      <h2 className="task-title">Assigned Tasks</h2>
-
-      <div className="table-wrapper">
-
-        <table className="task-table">
-
-          <thead>
-
-            <tr>
-              <th>S.No</th>
-              <th>Employee</th>
-              <th>Task Title</th>
-              <th>Priority</th>
-              <th>Status</th>
-              <th>Created Date</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            {tasks.map((task, index) => (
-
-              <tr key={task._id}>
-
-                <td>{index + 1}</td>
-
-                <td>
-                  {task.assignedEmployee?.name}
-                </td>
-
-                <td>{task.taskTitle}</td>
-
-                <td>
-                  <span className={`priority ${task.priority.toLowerCase()}`}>
-                    {task.priority}
-                  </span>
-                </td>
-
-                <td>
-                  <span className={`status ${task.status.toLowerCase()}`}>
-                    {task.status}
-                  </span>
-                </td>
-
-                <td>
-                  {new Date(task.createdAt).toLocaleDateString()}
-                </td>
-
+        <div className="vt-table-wrapper">
+          <table className="vt-table">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Task Title</th>
+                <th>Description</th>
+                <th>Priority</th>
               </tr>
+            </thead>
 
-            ))}
-
-          </tbody>
-
-        </table>
-
+            <tbody>
+              {tasks.length > 0 ? (
+                tasks.map((task, index) => (
+                  <tr key={task._id}>
+                    <td>{index + 1}</td>
+                    <td>{task.taskTitle}</td>
+                    <td>{task.description}</td>
+                    <td>
+                      <span className={`priority ${task.priority}`}>
+                        {task.priority}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4" className="no-data">
+                    No tasks found
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
-
     </div>
   );
 };
