@@ -257,6 +257,27 @@ Real-time UI updates after status change
 Responsive CSS using media queries
 
 
-#REGISTER PAGE
+#  REGISTER PAGE
 
-<img width="1920" height="1080" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/c844b8cc-9403-43c3-8316-489ca262d865" />
+<img width="1920" height="874" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/1066c429-713b-47bb-99c1-7de900e1b109" />
+
+#  LOGIN
+
+<img width="1920" height="833" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/74a8e246-c95d-4ded-8e9d-6ae23f30cda3" />
+
+#  TEAMLEAD DASHBOARD
+
+<img width="1920" height="875" alt="Screenshot (168)" src="https://github.com/user-attachments/assets/65cce3c0-4cd9-4765-9b90-6cadd1ee0b94" />
+
+#  CREATE_EMPLOYEE
+
+<img width="1920" height="878" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/a275d998-a70b-409b-aebf-c0fe2debece4" />
+
+#  CREATE_EMPLOYEE_ALERT
+
+<img width="1920" height="880" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/21794279-c293-482f-a048-1ef2c65f19b4" />
+
+
+
+
+
