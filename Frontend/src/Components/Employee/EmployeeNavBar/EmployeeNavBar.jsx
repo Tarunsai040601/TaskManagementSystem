@@ -37,7 +37,7 @@ const EmployeeNavBar = () => {
       {/* ✅ CENTER LINKS — navbar middle లో */}
       <div className="emp-center-links">
         <Link to="" onClick={() => setOpen(false)}>Home</Link>
-        <Link to="/ShowTask" onClick={() => setOpen(false)}>My Task</Link>
+        <Link to="ShowTask" onClick={() => setOpen(false)}>My Task</Link>
       </div>
 
       <div className={`emp-menu ${open ? "active" : ""}`}>
