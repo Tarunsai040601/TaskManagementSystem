@@ -12,4 +12,16 @@ The system improves communication between team members, enhances productivity, a
 
 # LiveWebsite : https://task-management-system-sand-six.vercel.app/
 
-# SourceCode : 
+# SourceCode : https://github.com/Tarunsai040601/TaskManagementSystem
+
+
+# Technologies Used:
+
+• Frontend         : React.js, HTML, CSS, JavaScript
+
+• Backend          : Node.js, Express.js
+
+• Database          : MongoDB with Mongoose
+
+• Authentication    : JWT (JSON Web Token)
+
