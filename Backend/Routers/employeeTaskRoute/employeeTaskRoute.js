@@ -3,10 +3,10 @@ const express = require("express");
 const {
   fetchEmployeeTask,
   updateEmployeeTask,
-} = require("../../Controllers/employeeTaskController/employeeTaskController");
+} = require("../../Controllers/employeeTaskController/employeeTaskController.js");
 
-const authMiddleware = require("../../Middlewares/authMiddleware");
-const roleMiddleware = require("../../Middlewares/RoleMiddleware");
+const authMiddleware = require("../../Middlewares/authMiddleware.js");
+const roleMiddleware = require("../../Middlewares/RoleMiddleware.js");
 
 const employeeTasks = express.Router();
 

@@ -3,9 +3,9 @@ const {
   FetchEmployees,
   createEmployee,
   searchEmployee,
-} = require("../../Controllers/CreateEmployeeController/EmployeeController");
-const authMiddleware = require("../../Middlewares/authMiddleware");
-const roleMiddleware = require("../../Middlewares/RoleMiddleware");
+} = require("../../Controllers/CreateEmployeeController/EmployeeController.js");
+const authMiddleware = require("../../Middlewares/authMiddleware.js");
+const roleMiddleware = require("../../Middlewares/RoleMiddleware.js");
 const employeeRouter = express.Router();
 
 // employees fetch
