@@ -25,3 +25,59 @@ The system improves communication between team members, enhances productivity, a
 
 • Authentication    : JWT (JSON Web Token)
 
+
+# Key Features:
+
+• Team Lead user creation and management
+
+• Task assignment functionality
+
+• Employee task status updates
+
+• Real-time task monitoring
+
+• Role-based authentication and authorization
+
+• Responsive and user-friendly interface
+
+
+# Project Setup Instructions
+
+git clone <repository-url>
+
+cd employee-task-management-system
+
+# Backend Setup
+
+Install Dependencies
+
+npm install
+
+# Create .env File
+
+PORT=8015
+MONGODB_URL=your_mongodb_connection
+JWT_SECRET=your_secret_key
+
+
+# Start Backend Server
+
+npm start or npm run dev
+
+
+# Frontend Setup
+
+Move to Frontend Folder
+
+cd Frontend
+
+# Install Dependencies
+
+npm install
+
+
+# Start Frontend
+
+npm run dev
+
+
