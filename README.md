@@ -189,7 +189,74 @@ JWT token is required for all protected routes.
 Task statuses are restricted to:
 
 Pending
+
 inProgress
+
 Completed
+
 Email addresses are unique.
 
+#  5. Edge Cases Identified
+
+Authentication Edge Cases
+
+Invalid token
+
+Expired token
+
+Unauthorized role access
+
+#  UI Edge Cases
+
+No tasks assigned
+
+Empty API responses
+
+API failure handling
+
+Responsive layout issues on smaller devices
+
+#  6. How Issues Were Handled
+
+Authentication Handling
+
+JWT middleware validates tokens.
+
+Role middleware restricts unauthorized access.
+
+Validation Handling
+
+Backend validation for required fields.
+
+Status validation before task updates.
+
+
+#  Error Handling
+
+Try-catch blocks used in APIs.
+
+Proper status codes:
+
+200 → Success
+
+400 → Bad Request
+
+401 → Unauthorized
+
+404 → Not Found
+
+500 → Server Error
+
+
+#  Frontend Handling
+
+Conditional rendering for empty states
+
+Real-time UI updates after status change
+
+Responsive CSS using media queries
+
+
+#REGISTER PAGE
+
+<img width="1920" height="1080" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/c844b8cc-9403-43c3-8316-489ca262d865" />
