@@ -245,33 +245,3 @@
 
   .emp-heading { font-size: 22px; }
 }
-
-/* =========================
-   LOADING / ERROR STATE
-========================= */
-.emp-loading {
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-.loader {
-  width: 36px;
-  height: 36px;
-  border: 3px solid #e2e8f0;
-  border-top-color: #6366f1;
-  border-radius: 50%;
-  animation: spin 0.75s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.emp-error {
-  color: #ef4444;
-  font-size: 14px;
-  font-weight: 500;
-}

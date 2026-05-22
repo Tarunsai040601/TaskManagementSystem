@@ -3,7 +3,6 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
-
 import { jwtDecode } from "jwt-decode";
 
 import {
@@ -13,23 +12,17 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
-import "./EmployeeNavBar.css";
+import './EmployeeNavBar.css'
 
 const EmployeeNavBar = () => {
 
   const navigate = useNavigate();
 
-  // ======================================================
-  // GET TOKEN
-  // ======================================================
+  const token = localStorage.getItem("employeeToken");
 
-  const token = localStorage.getItem(
-    "employeeToken"
-  );
-
-  // ======================================================
-  // CHECK TOKEN & ROLE
-  // ======================================================
+  /* =========================
+     CHECK TOKEN & ROLE
+  ========================== */
 
   useEffect(() => {
 
@@ -46,10 +39,6 @@ const EmployeeNavBar = () => {
 
       if (decoded.role !== "employee") {
 
-        localStorage.removeItem(
-          "employeeToken"
-        );
-
         navigate("/");
 
       }
@@ -58,19 +47,15 @@ const EmployeeNavBar = () => {
 
       console.log(error);
 
-      localStorage.removeItem(
-        "employeeToken"
-      );
-
       navigate("/");
 
     }
 
   }, [navigate, token]);
 
-  // ======================================================
-  // DECODE TOKEN
-  // ======================================================
+  /* =========================
+     DECODE TOKEN
+  ========================== */
 
   const decoded = token
     ? jwtDecode(token)
@@ -80,28 +65,26 @@ const EmployeeNavBar = () => {
   const email = decoded?.email;
   const role = decoded?.role;
 
-  // ======================================================
-  // LOGOUT
-  // ======================================================
+  /* =========================
+     LOGOUT
+  ========================== */
 
   const handleLogout = () => {
 
-    localStorage.removeItem(
-      "employeeToken"
-    );
+    localStorage.removeItem("employeeToken");
 
     navigate("/");
 
   };
 
   return (
-    <div className="employee-sidebar-container">
+    <div className="sidebar-container">
 
       {/* LOGO */}
 
-      <div className="employee-sidebar-logo">
+      <div className="sidebar-logo">
 
-        <div className="employee-logo-box">
+        <div className="logo-box">
           <FaUser />
         </div>
 
@@ -114,21 +97,21 @@ const EmployeeNavBar = () => {
 
       {/* LINKS */}
 
-      <div className="employee-sidebar-links">
+      <div className="sidebar-links">
 
         <Link
           to=""
-          className="employee-nav-link"
+          className="nav-link"
         >
-          <FaHome className="employee-nav-icon" />
+          <FaHome className="nav-icon" />
           <span>Home</span>
         </Link>
 
         <Link
           to="tasks"
-          className="employee-nav-link"
+          className="nav-link"
         >
-          <FaTasks className="employee-nav-icon" />
+          <FaTasks className="nav-icon" />
           <span>My Tasks</span>
         </Link>
 
@@ -136,9 +119,9 @@ const EmployeeNavBar = () => {
 
       {/* USER */}
 
-      <div className="employee-sidebar-user">
+      <div className="sidebar-user">
 
-        <div className="employee-user-avatar">
+        <div className="user-avatar">
 
           <img
             src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
@@ -147,7 +130,7 @@ const EmployeeNavBar = () => {
 
         </div>
 
-        <div className="employee-user-details">
+        <div className="user-details">
 
           <h3>{name}</h3>
 
@@ -162,7 +145,7 @@ const EmployeeNavBar = () => {
       {/* LOGOUT */}
 
       <button
-        className="employee-logout-btn"
+        className="logout-btn"
         onClick={handleLogout}
       >
         <FaSignOutAlt />
