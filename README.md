@@ -277,6 +277,32 @@ Responsive CSS using media queries
 
 <img width="1920" height="880" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/21794279-c293-482f-a048-1ef2c65f19b4" />
 
+# VIEW_EMPLOYEES
+
+<img width="1920" height="884" alt="Screenshot (171)" src="https://github.com/user-attachments/assets/e7aa0f7e-f408-4a1a-ac19-d10e72beea54" />
+
+#  ASSIGN TASK_ALERT
+
+<img width="1920" height="877" alt="Screenshot (172)" src="https://github.com/user-attachments/assets/48b11d83-8914-4335-a2a8-c727ceda9c47" />
+
+# ASSIGN_TASK_FORM
+
+<img width="1920" height="861" alt="Screenshot (173)" src="https://github.com/user-attachments/assets/7c5cd772-e100-4f16-9df7-d3efb25270b8" />
+
+# ASSIGN_ALERT
+<img width="1920" height="868" alt="Screenshot (174)" src="https://github.com/user-attachments/assets/559e73f9-2736-4dab-a139-8acd19196c4e" />
+
+
+# VIEW_TASK_ASSIGNED
+<img width="1920" height="875" alt="Screenshot (175)" src="https://github.com/user-attachments/assets/0b3bd3b0-f78b-42bb-9915-a15d7d7e6650" />
+
+
+
+
+
+
+
+
 
 
 
