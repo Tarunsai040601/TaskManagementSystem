@@ -8,7 +8,9 @@ import CreateEmployee from "./Components/TeamLead/CreateEmployee/CreateEmployee"
 import ViewEmployees from "./Components/TeamLead/ViewEmployee/ViewEmployee";
 import AssignedTask from "./Components/TeamLead/AssignedTask/AssignedTask";
 import ViewTasks from "./Components/TeamLead/ViewTasks/ViewTasks";
-import EmployeeNavBar from "./Components/Employee/EmployeeNavBar/EmployeeNavBar";
+import EmployeeHome from "./Components/Employee/EmployeeHome/EmployeeHome";
+import EmployeeLayout from "./Layouts/EmployeeLayout";
+import MyTask from "./Components/Employee/MyTasks/MyTask";
 
 
 const App = () => {
@@ -32,7 +34,9 @@ const App = () => {
 
       {/* employee dashboard */}
       <Routes>
-        <Route path="EmployeeDashBoard" element={<EmployeeNavBar/>}>
+        <Route path="EmployeeDashBoard" element={<EmployeeLayout/>}>
+        <Route index element={<EmployeeHome/>}/>
+        <Route path="ShowTask" element={<MyTask/>}/>
         </Route>
       </Routes>
     </div>

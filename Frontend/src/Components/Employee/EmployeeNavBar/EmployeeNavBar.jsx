@@ -36,7 +36,7 @@ const EmployeeNavBar = () => {
 
       {/* ✅ CENTER LINKS — navbar middle లో */}
       <div className="emp-center-links">
-        <Link to="/EmployeeDashBoard" onClick={() => setOpen(false)}>Home</Link>
+        <Link to="" onClick={() => setOpen(false)}>Home</Link>
         <Link to="/ShowTask" onClick={() => setOpen(false)}>My Task</Link>
       </div>
 
@@ -44,8 +44,8 @@ const EmployeeNavBar = () => {
 
   {/* ✅ Mobile  */}
   <div className="emp-mobile-links">
-    <Link to="/EmployeeDashBoard" onClick={() => setOpen(false)}>Home</Link>
-    <Link to="/ShowTask" onClick={() => setOpen(false)}>My Task</Link>
+    <Link to="" onClick={() => setOpen(false)}>Home</Link>
+    <Link to="ShowTask" onClick={() => setOpen(false)}>My Task</Link>
   </div>
 
   {/* AVATAR + WELCOME */}

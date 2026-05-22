@@ -1,0 +1,104 @@
+.emp-home-page {
+  padding: 20px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* WELCOME CARD */
+.emp-welcome-card {
+  background: linear-gradient(135deg, #20c8b7, #1f2937);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.emp-quote {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* STATS */
+.emp-stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.emp-box {
+  flex: 1;
+  min-width: 150px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.emp-box.pending {
+  background: #f59e0b;
+}
+
+.emp-box.completed {
+  background: #10b981;
+}
+
+.emp-box.total {
+  background: #3b82f6;
+}
+
+/* TASK SECTION */
+.emp-task-section h3 {
+  margin-bottom: 10px;
+}
+
+.emp-task-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* TASK CARD */
+.emp-task-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.emp-task-card.pending {
+  border-color: #f59e0b;
+}
+
+.emp-task-card.completed {
+  border-color: #10b981;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: #e5e7eb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .emp-task-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .emp-task-list {
+    grid-template-columns: 1fr;
+  }
+
+  .emp-stats {
+    flex-direction: column;
+  }
+}
