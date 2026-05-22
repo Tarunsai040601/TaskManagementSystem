@@ -16,7 +16,7 @@ const ViewTasks = () => {
     try {
 
       const res = await axios.get(
-        "http://localhost:8015/api/tasks/fetchTask",
+        "https://taskmanagementsystem-g40l.onrender.com/api/tasks/fetchTask",
         {
           headers: {
             Authorization: `Bearer ${token}`,

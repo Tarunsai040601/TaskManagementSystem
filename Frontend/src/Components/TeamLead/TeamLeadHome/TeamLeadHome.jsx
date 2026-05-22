@@ -26,7 +26,7 @@ const TeamLeadHome = () => {
   const fetchEmployees = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8015/api/create/employeeFetch",
+        "https://taskmanagementsystem-g40l.onrender.com/api/create/employeeFetch",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("teamLeadToken")}`,
@@ -47,7 +47,7 @@ const TeamLeadHome = () => {
   ========================== */
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:8015/api/tasks/fetchTask", {
+      const res = await axios.get("https://taskmanagementsystem-g40l.onrender.com/api/tasks/fetchTask", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("teamLeadToken")}`,
         },

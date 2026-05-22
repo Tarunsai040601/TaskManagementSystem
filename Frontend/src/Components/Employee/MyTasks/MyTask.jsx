@@ -33,7 +33,7 @@ const MyTask = () => {
       try {
 
         const res = await axios.get(
-          "http://localhost:8015/api/employee/getEmployeeTask",
+          "https://taskmanagementsystem-g40l.onrender.com/api/employee/getEmployeeTask",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ const MyTask = () => {
     try {
 
       const res = await axios.patch(
-        `http://localhost:8015/api/employee/update/${taskId}`,
+        `https://taskmanagementsystem-g40l.onrender.com/api/employee/update/${taskId}`,
         { status },
         {
           headers: {

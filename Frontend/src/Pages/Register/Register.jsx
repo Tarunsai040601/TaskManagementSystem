@@ -35,7 +35,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8015/api/auth/register",
+        "https://taskmanagementsystem-g40l.onrender.com/api/auth/register",
         formData
       );
 
