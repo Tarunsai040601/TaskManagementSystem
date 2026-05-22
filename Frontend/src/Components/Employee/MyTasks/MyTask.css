@@ -1,93 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   PAGE
+========================= */
 .mytask-page {
-  padding: 20px;
-  background: #f5f7fb;
+  width: 100%;
   min-height: 100vh;
+  padding: 30px;
+  background: #f3f7fc;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-/* TITLE */
+/* =========================
+   HEADER
+========================= */
+.mytask-header {
+  margin-bottom: 28px;
+}
+
 .mytask-title {
-  margin-bottom: 15px;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 34px;
+  font-weight: 700;
+  color: #111827;
+  position: relative;
+  display: inline-block;
 }
 
-/* GRID - 3 CARDS PER ROW */
+.mytask-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 70%;
+  height: 4px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    #06b6d4,
+    #2563eb
+  );
+}
+
+/* =========================
+   GRID
+========================= */
 .mytask-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
-/* CARD */
-.task-card {
+/* =========================
+   CARD
+========================= */
+.mytask-card {
   background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-left: 5px solid #ccc;
-  transition: 0.3s;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.07);
+  transition: 0.35s ease;
+  border-top: 5px solid #3b82f6;
 }
 
-.task-card:hover {
-  transform: translateY(-3px);
+.mytask-card:hover {
+  transform: translateY(-6px);
 }
 
-/* STATUS */
-.status {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 4px 10px;
-  border-radius: 6px;
+/* =========================
+   CARD TOP
+========================= */
+.mytask-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.mytask-card-top h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+  word-break: break-word;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+.mytask-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   STATUS
+========================= */
+.mytask-status {
+  padding: 6px 14px;
+  border-radius: 30px;
   font-size: 12px;
+  font-weight: 600;
   color: white;
+  text-transform: capitalize;
+  white-space: nowrap;
 }
 
-.status.pending {
+.mytask-status.pending {
   background: #f59e0b;
 }
 
-.status.inprogress {
+.mytask-status.inprogress {
   background: #3b82f6;
 }
 
-.status.complete {
+.mytask-status.complete {
   background: #10b981;
 }
 
-/* BUTTON GROUP */
-.btn-group {
-  margin-top: 10px;
+/* =========================
+   BUTTON GROUP
+========================= */
+.mytask-btn-group {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
-.btn-group button {
+/* =========================
+   BUTTONS
+========================= */
+.mytask-btn-group button {
   flex: 1;
-  padding: 5px;
+  min-width: 100px;
   border: none;
-  font-size: 12px;
-  border-radius: 5px;
+  padding: 11px;
+  border-radius: 10px;
   cursor: pointer;
-  background: #1f2937;
+  font-size: 13px;
+  font-weight: 600;
   color: white;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.btn-group button:hover {
-  background: #20c8b7;
-  color: black;
+/* Pending */
+.pending-btn {
+  background: #f59e0b;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .mytask-grid {
-    grid-template-columns: repeat(2, 1fr);
+.pending-btn:hover {
+  background: #d97706;
+}
+
+/* In Progress */
+.progress-btn {
+  background: #3b82f6;
+}
+
+.progress-btn:hover {
+  background: #2563eb;
+}
+
+/* Complete */
+.complete-btn {
+  background: #10b981;
+}
+
+.complete-btn:hover {
+  background: #059669;
+}
+
+/* =========================
+   EMPTY
+========================= */
+.mytask-empty {
+  font-size: 18px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* =========================
+   LAPTOP
+========================= */
+@media (max-width: 1100px) {
+
+  .mytask-page {
+    padding: 25px;
   }
+
+  .mytask-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
 }
 
+/* =========================
+   TABLET
+========================= */
 @media (max-width: 768px) {
+
+  .mytask-page {
+    padding: 20px;
+  }
+
+  .mytask-title {
+    font-size: 28px;
+  }
+
   .mytask-grid {
     grid-template-columns: 1fr;
   }
+
+  .mytask-card {
+    padding: 20px;
+  }
+
+  .mytask-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mytask-btn-group {
+    flex-direction: column;
+  }
+
+  .mytask-btn-group button {
+    width: 100%;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+
+  .mytask-page {
+    padding: 15px;
+  }
+
+  .mytask-title {
+    font-size: 24px;
+  }
+
+  .mytask-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .mytask-card-top h3 {
+    font-size: 19px;
+  }
+
+  .mytask-description {
+    font-size: 14px;
+  }
+
 }
