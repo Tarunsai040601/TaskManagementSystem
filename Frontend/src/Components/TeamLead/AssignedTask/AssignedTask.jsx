@@ -101,11 +101,11 @@ const AssignedTask = () => {
 
         <h2>Assign Task</h2>
 
-        {employee && (
+        {/* {employee && (
           <p className="emp-info">
             Assigning to: <b>{employee.name}</b>
           </p>
-        )}
+        )} */}
 
         <form onSubmit={handleSubmit}>
 
