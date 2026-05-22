@@ -296,6 +296,22 @@ Responsive CSS using media queries
 # VIEW_TASK_ASSIGNED
 <img width="1920" height="875" alt="Screenshot (175)" src="https://github.com/user-attachments/assets/0b3bd3b0-f78b-42bb-9915-a15d7d7e6650" />
 
+# EMPLOYEE_DASHBOARD
+
+<img width="1920" height="867" alt="Screenshot (176)" src="https://github.com/user-attachments/assets/2dec8d32-81be-49f3-873f-e911aaa807de" />
+
+#  MY_TASKS
+<img width="1920" height="867" alt="Screenshot (176)" src="https://github.com/user-attachments/assets/4b14a704-cf1d-48b0-90ad-d85068176f8b" />
+
+#  MOBILE_RESPONSIVE
+<img width="1475" height="887" alt="Screenshot (177)" src="https://github.com/user-attachments/assets/7c979174-a884-4c82-a895-ad126a795db4" />
+
+<img width="1596" height="875" alt="Screenshot (178)" src="https://github.com/user-attachments/assets/c7a52cc2-3a7e-4280-95c3-1e23676bf343" />
+
+
+
+
+
 
 
 
