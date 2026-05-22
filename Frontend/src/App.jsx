@@ -3,14 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import TeamLeadLayout from "./Layouts/TeamLeadLayout";
-import EmployeeLayout from "./Layouts/EmployeeLayout";
 import TeamLeadHome from "./Components/TeamLead/TeamLeadHome/TeamLeadHome";
 import CreateEmployee from "./Components/TeamLead/CreateEmployee/CreateEmployee";
 import ViewEmployees from "./Components/TeamLead/ViewEmployee/ViewEmployee";
 import AssignedTask from "./Components/TeamLead/AssignedTask/AssignedTask";
 import ViewTasks from "./Components/TeamLead/ViewTasks/ViewTasks";
-import EmployeeHome from "./Components/Employee/EmployeeHome/EmployeeHome";
-import MyTask from "./Components/Employee/MyTasks/MyTask";
+import EmployeeNavBar from "./Components/Employee/EmployeeNavBar/EmployeeNavBar";
+
 
 const App = () => {
   return (
@@ -33,9 +32,7 @@ const App = () => {
 
       {/* employee dashboard */}
       <Routes>
-        <Route path="EmployeeDashBoard" element={<EmployeeLayout />}>
-        <Route index element={<EmployeeHome/>}/>
-        <Route path="tasks" element={<MyTask/>}/>
+        <Route path="EmployeeDashBoard" element={<EmployeeNavBar/>}>
         </Route>
       </Routes>
     </div>

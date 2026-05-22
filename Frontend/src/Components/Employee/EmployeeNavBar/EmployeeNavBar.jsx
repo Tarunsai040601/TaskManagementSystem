@@ -1,158 +1,68 @@
-import React, { useEffect } from "react";
-import {
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-
-import {
-  FaHome,
-  FaTasks,
-  FaUser,
-  FaSignOutAlt,
-} from "react-icons/fa";
-
-import './EmployeeNavBar.css'
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./EmployeeNavBar.css";
 
 const EmployeeNavBar = () => {
-
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   const token = localStorage.getItem("employeeToken");
 
-  /* =========================
-     CHECK TOKEN & ROLE
-  ========================== */
-
-  useEffect(() => {
-
-    if (!token) {
-
-      navigate("/");
-      return;
-
-    }
-
+  let employeeName = "Employee";
+  if (token) {
     try {
-
       const decoded = jwtDecode(token);
-
-      if (decoded.role !== "employee") {
-
-        navigate("/");
-
-      }
-
-    } catch (error) {
-
-      console.log(error);
-
-      navigate("/");
-
-    }
-
-  }, [navigate, token]);
-
-  /* =========================
-     DECODE TOKEN
-  ========================== */
-
-  const decoded = token
-    ? jwtDecode(token)
-    : null;
-
-  const name = decoded?.name;
-  const email = decoded?.email;
-  const role = decoded?.role;
-
-  /* =========================
-     LOGOUT
-  ========================== */
+      employeeName = decoded.name;
+    } catch (err) {}
+  }
 
   const handleLogout = () => {
-
     localStorage.removeItem("employeeToken");
-
     navigate("/");
-
   };
 
   return (
-    <div className="sidebar-container">
+    <nav className="emp-navbar">
 
-      {/* LOGO */}
-
-      <div className="sidebar-logo">
-
-        <div className="logo-box">
-          <FaUser />
-        </div>
-
-        <div>
-          <h2>Employee</h2>
-          <p>Dashboard</p>
-        </div>
-
+      <div className="emp-logo">
+        <h2>Employee Dashboard</h2>
       </div>
 
-      {/* LINKS */}
-
-      <div className="sidebar-links">
-
-        <Link
-          to=""
-          className="nav-link"
-        >
-          <FaHome className="nav-icon" />
-          <span>Home</span>
-        </Link>
-
-        <Link
-          to="tasks"
-          className="nav-link"
-        >
-          <FaTasks className="nav-icon" />
-          <span>My Tasks</span>
-        </Link>
-
+      <div className="emp-menu-icon" onClick={() => setOpen(!open)}>
+        {open ? <FaTimes /> : <FaBars />}
       </div>
 
-      {/* USER */}
-
-      <div className="sidebar-user">
-
-        <div className="user-avatar">
-
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt="profile"
-          />
-
-        </div>
-
-        <div className="user-details">
-
-          <h3>{name}</h3>
-
-          <p>{email}</p>
-
-          <span>{role}</span>
-
-        </div>
-
+      {/* ✅ CENTER LINKS — navbar middle లో */}
+      <div className="emp-center-links">
+        <Link to="/EmployeeDashBoard" onClick={() => setOpen(false)}>Home</Link>
+        <Link to="/ShowTask" onClick={() => setOpen(false)}>My Task</Link>
       </div>
 
-      {/* LOGOUT */}
+      <div className={`emp-menu ${open ? "active" : ""}`}>
 
-      <button
-        className="logout-btn"
-        onClick={handleLogout}
-      >
-        <FaSignOutAlt />
-        Logout
-      </button>
+  {/* ✅ Mobile  */}
+  <div className="emp-mobile-links">
+    <Link to="/EmployeeDashBoard" onClick={() => setOpen(false)}>Home</Link>
+    <Link to="/ShowTask" onClick={() => setOpen(false)}>My Task</Link>
+  </div>
 
+  {/* AVATAR + WELCOME */}
+  <div className="emp-user-info">
+    <div className="emp-avatar">
+      {employeeName.charAt(0).toUpperCase()}
     </div>
+    <span className="emp-name">Welcome: {employeeName}</span>
+  </div>
+
+  <button className="logout-btn" onClick={handleLogout}>
+    Logout
+  </button>
+
+</div>
+
+    </nav>
   );
 };
 
