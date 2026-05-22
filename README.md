@@ -256,6 +256,8 @@ Real-time UI updates after status change
 
 Responsive CSS using media queries
 
+# FOLDER_STRUCTUR SAMPLE
+<img width="1440" height="1440" alt="image" src="https://github.com/user-attachments/assets/2bf2f0ec-29fb-4138-8ae3-df671cf92876" />
 
 #  REGISTER PAGE
 
